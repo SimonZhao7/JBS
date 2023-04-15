@@ -3,25 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+main {
+  background-image: url('../img/IMG_8862.JPG');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 100% 100%;
+  background-size: cover;
 }
 
-a,
-.green {
+a, .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
 }
 
-.center-fit {
-  max-width: 100%;
-  max-height: 100vh;
-  margin: auto;
-}
 
 @media (hover: hover) {
   a:hover {
@@ -33,11 +28,5 @@ a,
   body {
     display: flex;
     place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 }

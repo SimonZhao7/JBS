@@ -1,23 +1,15 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+//import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
-  <html>
-    <TheWelcome />
+  <head>
+    <link rel="stylesheet" type="text/css" href="../assets/main.css">
+    <title>JPS</title>
+  </head>
 
-    <main>
-        <head>
-          <title>FPS</title>
-        </head>
-
-        <body>
-          <p style="background-image: url(../../img/IMG_8862.JPG);"></p>
-        </body>
-    </main>
-  </html>
+  <main>
+    <h2>Welcome to our Site, begin searching for rides now!</h2>
+  </main>
+    <!-- <TheWelcome /> -->
 </template>
-
-<style>
-
-</style>
