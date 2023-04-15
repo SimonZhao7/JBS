@@ -3,11 +3,7 @@ import App from './App.vue'
 import router from './router'
 import './assets/main.css'
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAqMVnxGikQ4ilzOICIk8dO0Fy-kOvXfPc",
   authDomain: "rideshare-6c04b.firebaseapp.com",
@@ -22,7 +18,6 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 const app = createApp(App)
-
 
 app.use(router)
 
