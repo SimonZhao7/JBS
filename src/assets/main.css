@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 main {
   background-image: url('../img/IMG_8862.JPG');
   background-repeat: no-repeat;
   background-size: contain;
   background-size: 100% 100%;
   background-size: cover;
+=======
+@layer base {
+    html, body, #app {
+        height: 100%;
+        width: 100%;
+        
+    }
+>>>>>>> acb9086fd7df822fe359ce504b7e9fe687152b0e
 }
