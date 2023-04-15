@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-<<<<<<< HEAD
 @tailwind utilities;
 
 main {
@@ -10,26 +9,3 @@ main {
   background-size: 100% 100%;
   background-size: cover;
 }
-
-a, .green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-}
-=======
-@tailwind utilities;
->>>>>>> b6a8cb5d3e50ce672550010dcdb3d56a5c067bce

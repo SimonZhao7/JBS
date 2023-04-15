@@ -37,9 +37,5 @@ signInWithPopup(auth, provider)
     </div>
   </header>
   <RouterView />
-<<<<<<< HEAD
 </template>
 
-=======
-</template>
->>>>>>> b6a8cb5d3e50ce672550010dcdb3d56a5c067bce
