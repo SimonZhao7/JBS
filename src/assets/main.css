@@ -1,6 +1,6 @@
-@import './base.css';
 @tailwind base;
 @tailwind components;
+<<<<<<< HEAD
 @tailwind utilities;
 
 main {
@@ -30,3 +30,6 @@ a, .green {
     place-items: center;
   }
 }
+=======
+@tailwind utilities;
+>>>>>>> b6a8cb5d3e50ce672550010dcdb3d56a5c067bce
