@@ -1,11 +1,13 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRouter } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import { ref } from 'vue'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // isSignedIn to make sure "LogIn" button goes away if currently logged in
 const isSignedIn = ref(false)
+const router = useRouter()
 
 function googleSignin() {
   const auth = getAuth();
@@ -15,6 +17,7 @@ signInWithPopup(auth, provider)
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
     const user = result.user;
+    router.push({ path: '/info' })
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -34,7 +37,6 @@ signInWithPopup(auth, provider)
 
       <nav>
         <RouterLink to="/"> Home </RouterLink>
-        <RouterLink to="/signin"> Login </RouterLink>
         <button @click="googleSignin"> Login/Sign-up </button>
       </nav>
     </div>
