@@ -1,10 +1,14 @@
 <template>
-  <h1> Create an Account </h1>
-  <p><input type = "text" placeholder="First Name" v-model="firstname"/></p>
-  <p><input type = "text" placeholder="Last Name" v-model="lastname"/></p>
-  <p><input type = "text" placeholder="Username" v-model="username"/></p>
-  <p><input type = "text" placeholder="Contact" v-model="contact"/></p>
-  <button @click="addUserInfo"> Submit </button>
+    <div class="flex items-center justify-center flex-col h-full bg-gradient-to-r from-yellow-400 to-orange-400 space-y-4">
+        <h1 class="p-5 font-light text-5xl text-white"> Create an Account </h1>
+        <div class = "space-y-4 px-40">
+            <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-light" type = "text" placeholder="First Name" v-model="firstname"/>
+            <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-light" type = "text" placeholder="Last Name" v-model="lastname"/>
+            <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-light" type = "text" placeholder="Username" v-model="username"/>
+            <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-light" type = "text" placeholder="Contact" v-model="contact"/>
+            <button class = "text-2xl w-full h-10 font-light  text-white border-white-300 border-2 rounded-md transition-all duration-250 outline-none px-4 hover:border-yellow-200 focus:border-white-300" @click="addUserInfo"> Submit </button>
+        </div>
+    </div>
 </template>
 
 <script setup>
