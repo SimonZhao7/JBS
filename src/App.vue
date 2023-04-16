@@ -2,9 +2,9 @@
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 import { ref } from 'vue'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, getDoc , doc} from "firebase/firestore";
+import { db, auth } from '../firebase'
 
-// isSignedIn to make sure "LogIn" button goes away if currently logged in
 const isSignedIn = ref(false)
 const router = useRouter()
 
@@ -12,12 +12,23 @@ function googleSignin() {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
 signInWithPopup(auth, provider)
-  .then((result) => {
+  .then(async (result) => {
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
     const user = result.user;
-    router.push({ path: '/info' })
+    const docRef = doc(db, 'userInfo', user.uid)
+    const docCurr = await getDoc(docRef)
+
+    if (docCurr.exists()) {
+      router.push({ path: '/' })
+    }
+    else{
+      router.push({ path: '/info' })
+    }
+
+    // router.push({ path: '/info' })
   }).catch((error) => {
+    console.log(error)
     const errorCode = error.code;
     const errorMessage = error.message;
     const email = error.customData.email;
