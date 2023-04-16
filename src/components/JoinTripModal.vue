@@ -30,7 +30,7 @@
                 tripId: props.tripId,
                 location: routeLatLng.value,
                 locationId: routeId.value,
-                status: 'ACCEPTED',
+                status: 'PENDING',
             })
             emit('close')
         })

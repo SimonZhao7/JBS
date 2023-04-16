@@ -20,13 +20,14 @@
         onSnapshot(doc(db, 'trips', id), (res) => {
             trip.value = { id, ...res.data() }
 
-            onSnapshot(query(collection(db, 'routes'), where('tripId', '==', trip.value.id)), (res) => {
+            onSnapshot(query(collection(db, 'routes'), where('tripId', '==', trip.value.id), where('status', '==', 'ACCEPTED')), (res) => {
                 loadMap(res.docs)
             })
             loading.value = false
         })
     })
 
+    // Has duplicate use
     async function loadMap(docs) {
         const loader = new Loader({ apiKey: import.meta.env.VITE_MAPS_API_KEY, version: 'weekly', libraries: ['places'] })
         await loader.load()
@@ -61,25 +62,25 @@
         <div v-if="!loading" class="flex-1 flex bg-white hadow-2xl p-8 rounded-[20px] overflow-none"> 
             <div class="flex-1 flex p-14 pr-0 h-full flex-col justify-between">
                 <div>
-                    <h1 class="text-6xl">{{ trip.title }}</h1>
+                    <h1 class="text-6xl text-indigo-500 font-bold">{{ trip.title }}</h1>
                     <br />
                     <br />
                     <h3 class="text-xl">Departure: {{ new Date(trip.leaveDate.seconds * 1000).toLocaleString() }}</h3>
                 </div>
-               <div class="flex items-center">
+                <div class="flex items-center">
                     <div class="flex-1">
                         <h3 class="text-xl">Capacity: {{ trip.capacity }}</h3>
                         <br />
                         <h3 class="text-xl">Price: ${{ trip.price }}</h3>
                     </div>
                     <div class="flex-1 pr-8">
-                        <button class="w-full gra-btn h-16 rounded-full text-xl hover:scale-105 transition-all" @click="() => showModal = true">
+                        <button class="w-full gra-btn h-16 rounded-full text-xl transition-all" @click="() => showModal = true">
                             Join Trip
                         </button>
                     </div>
                </div>
             </div>
-            <div class="flex-1 rounded-[15px]" id="map">
+            <div class="w-full lg:flex-1 h-full lg:h-auto rounded-[15px]" id="map">
             </div>
         </div>
         <div v-else class="self-center justify-self-center flex-1 flex items-center justify-center h-full">

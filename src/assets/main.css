@@ -12,6 +12,6 @@
 
 @layer components {
     .gra-btn {
-        @apply bg-gradient-to-r from-indigo-500 to-blue-500 text-white;
+        @apply border-4 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white ;
     }
 }
