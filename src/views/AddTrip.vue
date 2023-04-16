@@ -7,6 +7,7 @@
     import { addDoc, collection, Timestamp } from '@firebase/firestore';
     import { onAuthStateChanged } from '@firebase/auth';
     import { auth, db } from '../../firebase';
+    import { useRouter } from 'vue-router'
 
     const title = ref('')
     const dateString = ref('')
@@ -17,6 +18,7 @@
     const destLatLng = ref({})
     const price = ref(0)
     const capacity = ref(1)
+    const router = useRouter()
 
     async function handleSubmit() {
         onAuthStateChanged(auth, async (user) => {
@@ -36,6 +38,7 @@
             }
 
             await addDoc(collection(db, 'trips'), data)
+            router.push({ path: '/' })
         })
     }
 
