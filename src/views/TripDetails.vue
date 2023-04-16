@@ -5,7 +5,7 @@
     // Components
     import JoinTripModal from '../components/JoinTripModal.vue';
     // Firebase 
-    import { collection, getDoc, doc, getDocs, query, where } from '@firebase/firestore';
+    import { collection, doc, query, where, onSnapshot } from '@firebase/firestore';
     import { db } from '../../firebase';
 
     const trip = ref({})
@@ -17,11 +17,14 @@
     onMounted(async () => {
         loading.value = true
 
-        const res = await getDoc(doc(collection(db, 'trips'), id))
-        trip.value = { id, ...res.data() }
-        const q = await getDocs(query(collection(db, 'routes'), where('tripId', '==', trip.value.id)))
-        loading.value = false
-        loadMap(q.docs)
+        onSnapshot(doc(db, 'trips', id), (res) => {
+            trip.value = { id, ...res.data() }
+
+            onSnapshot(query(collection(db, 'routes'), where('tripId', '==', trip.value.id)), (res) => {
+                loadMap(res.docs)
+            })
+            loading.value = false
+        })
     })
 
     async function loadMap(docs) {

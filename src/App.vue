@@ -8,15 +8,17 @@ const router = useRouter()
 function googleSignin() {
   const auth = getAuth();
   const provider = new GoogleAuthProvider()
+  signInWithPopup(auth, provider)
+    .then(async (result) => {
+    const token = credential.accessToken;
+    const user = result.user;
+    const docRef = doc(db, 'userInfo', user.uid);
+    const docCurr = await getDoc(docRef);
   if (docCurr.exists()) {
     router.push({ path: '/' })
   } else {
     router.push({ path: '/info' })
-  }
-signInWithPopup(auth, provider)
-  .then(async (_) => {
-    router.push({ path: '/info' })
-  }).catch((_) => {});
+  }}).catch((_) => {});
 }
 
 </script>
