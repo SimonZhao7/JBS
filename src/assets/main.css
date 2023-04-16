@@ -71,4 +71,9 @@ h2 {
 
 .loopItems {
     margin-top: 20px;
+    
+@layer components {
+    .gra-btn {
+        @apply border-4 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white ;
+    }
 }

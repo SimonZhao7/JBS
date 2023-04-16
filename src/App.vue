@@ -2,12 +2,15 @@
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { doc, setDoc, getDoc, getFirestore } from "firebase/firestore"; 
+import InboxModal from './components/InboxModal.vue'
 import { db } from '../firebase'
+import { ref } from 'vue'
 
 
 // isSignedIn to make sure "LogIn" button goes away if currently logged in
-const router = useRouter()
+const router = useRouter();
 const auth = getAuth();
+const inBoxSwitch = ref(false);
 
 function googleSignin() {
   const provider = new GoogleAuthProvider();
@@ -25,13 +28,11 @@ signInWithPopup(auth, provider)
       router.push({ path: '/info' })
     }
   }).catch((error) => {
-    console.log(error)
     const errorCode = error.code;
     const errorMessage = error.message;
     const email = error.customData.email;
   });
 }
-
 function redirectAddTrips() {
   onAuthStateChanged(auth, async (user) => {
         if (user) {
@@ -50,6 +51,24 @@ function redirectAddTrips() {
     });
 }
 
+function InboxMessageBox() {
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const docRef = doc(db, 'userInfo', user.uid)
+      const docCurr = await getDoc(docRef);
+      if (docCurr.exists()){
+        inBoxSwitch.value = !inBoxSwitch.value
+      }
+      else{
+        googleSignin()
+      }
+    }
+    else{
+      googleSignin()
+    }
+  })
+}
+
 </script>
 
 <template>
@@ -65,10 +84,16 @@ function redirectAddTrips() {
               <h1>JBS Rideshare<sup>©</sup></h1>
             </div>
         </div>
-        <button class="shw-btn border-0 rounded-full w-12 h-12 bg-white text-3xl flex items-center justify-center hover:scale-110 transition-all duration-150 text-gray-600" @click="redirectAddTrips" >+</button>
+        <div class = "flex space-x-6">
+            <button class="shw-btn border-0 rounded-full w-24 h-12 bg-white text-xl flex items-center justify-center hover:scale-110 transition-all duration-150 text-gray-600" @click="InboxMessageBox" >Inbox</button>
+          <button class="shw-btn border-0 rounded-full w-12 h-12 bg-white text-3xl flex items-center justify-center hover:scale-110 transition-all duration-150 text-gray-600" @click="redirectAddTrips" >+</button>
+        </div>
       </div>
     </nav>
   </header>
+  <div v-if="inBoxSwitch == true" class = "flex items-center justify-center absolute h-full w-full bg-black bg-opacity-40">
+    <InboxModal @close="() => inBoxSwitch = false" />
+  </div>
   <RouterView />
 </template>
 

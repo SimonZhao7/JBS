@@ -49,6 +49,7 @@ const o = onMounted( async()=> {
         </div>
       </div>
     </div>
+    <TheWelcome />
   </main>
   <!-- <TheWelcome /> -->
 </template>
