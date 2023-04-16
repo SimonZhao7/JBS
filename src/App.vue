@@ -38,11 +38,8 @@ signInWithPopup(auth, provider)
   <RouterView />
 </template>
 
-<<<<<<< HEAD
-=======
 <style>
   .shw-btn {
       box-shadow: -3px -3px 10px 0 white , 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
   }
 </style>
->>>>>>> 45a525a914cf5ecc218fd9ea53afc54ef8f489a8

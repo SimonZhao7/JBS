@@ -22,18 +22,6 @@ const router = createRouter({
       name: 'addTrip',
       component: AddTrip,
     },
-    {
-<<<<<<< HEAD
-      path: '/signin',
-      name: 'signin',
-      component: () => import("../views/signedin.vue")
-    },
-=======
-      path: '/trips/:id',
-      name: 'viewTrip',
-      component: TripDetails,
-    }
->>>>>>> 45a525a914cf5ecc218fd9ea53afc54ef8f489a8
   ]
 })
 
