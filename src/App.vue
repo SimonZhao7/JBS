@@ -20,11 +20,9 @@ signInWithPopup(auth, provider)
     const docCurr = await getDoc(docRef)
 
     if (docCurr.exists()) {
-      console.log('1')
       router.push({ path: '/' })
     }
     else{
-      console.log('2')
       router.push({ path: '/info' })
     }
 

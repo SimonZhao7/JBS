@@ -24,18 +24,20 @@ const firstname = ref("");
 const lastname = ref("");
 const contact = ref("");
 const username = ref("");
-const user = auth.currentUser;
 
 function addUserInfo () {
-    const userData = {
-    firstname: firstname.value,
-    lastname: lastname.value,
-    Username: username.value,
-    Contact: contact.value
-};
     onAuthStateChanged(auth, async (user) => {
         if (user) {
+            const userData = {
+                firstname: firstname.value,
+                lastname: lastname.value,
+                Email: user.email,
+                Username: username.value,
+                Contact: contact.value,
+                profilePictureURL: user.photoURL
+            };
             const userUID = user.uid;
+            
             await setDoc(doc(db, "userInfo", userUID), userData);
         }
     });
