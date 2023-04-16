@@ -1,7 +1,7 @@
 <template>
-    <div class="flex items-center justify-center flex-col h-full bg-gradient-to-r from-violet-500 to-blue-300 space-y-4">
+    <div class="flex items-center justify-center flex-col h-full bg-gradient-to-r from-indigo-500 to-blue-500 space-y-4">
         <h1 class="p-5 font-bold text-5xl text-white hover: text-blue"> Create an Account </h1>
-        <div class = "space-y-4 px-40">
+        <div class = "space-y-4 max-w-2xl">
             <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-medium" type = "text" placeholder="First Name" v-model="firstname"/>
             <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-medium" type = "text" placeholder="Last Name" v-model="lastname"/>
             <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-medium" type = "text" placeholder="Username" v-model="username"/>
