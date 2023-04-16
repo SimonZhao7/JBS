@@ -42,7 +42,7 @@
 </script>
 
 <template>
-    <main class="max-w-2xl mx-auto">
+    <main class="max-w-2xl mx-auto py-32">
         <h1 class="text-center text-4xl">Add Trip</h1>
         <form class="space-y-4">
             <Input :value="title" labelText="Title" @change="(val) => title = val" placeHolder="Enter a title..." />

@@ -1,11 +1,9 @@
 <script setup>
 import { RouterLink, RouterView, useRouter } from 'vue-router'
-import { ref } from 'vue'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore, getDoc , doc} from "firebase/firestore";
-import { db, auth } from '../firebase'
 
-const isSignedIn = ref(false)
+
+// isSignedIn to make sure "LogIn" button goes away if currently logged in
 const router = useRouter()
 
 function googleSignin() {
@@ -14,38 +12,34 @@ function googleSignin() {
 signInWithPopup(auth, provider)
   .then(async (result) => {
     const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    const user = result.user;
-    const docRef = doc(db, 'userInfo', user.uid)
-    const docCurr = await getDoc(docRef)
-
-    if (docCurr.exists()) {
-      router.push({ path: '/' })
-    }
-    else{
-      router.push({ path: '/info' })
-    }
-
-    // router.push({ path: '/info' })
-  }).catch((error) => {
-    console.log(error)
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    const email = error.customData.email;
-    const credential = GoogleAuthProvider.credentialFromError(error);
-  });
+    router.push({ path: '/info' })
+  }).catch((_) => {});
 }
 
 </script>
 
 <template>
   <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/"> Home </RouterLink>
-        <button @click="googleSignin"> Login/Sign-up </button>
-      </nav>
-    </div>
+    <nav class="shadow-md h-20 w-full py-3 text-md bg-white rounded-b-[20px] fixed">
+      <div class="flex items-center justify-between max-w-7xl mx-auto w-full h-full text-lg space-x-8">
+        <div class="flex space-x-8">
+          <div class="hover:text-gray-500">
+            <RouterLink to="/"> Home </RouterLink>
+          </div>
+          <div @click="googleSignin" class="hover:text-gray-500">
+            Login
+          </div>
+        </div>
+        
+        <button class="shw-btn border-0 rounded-full w-12 h-12 bg-white text-3xl flex items-center justify-center hover:scale-110 transition-all duration-150 text-gray-600">+</button>
+      </div>
+    </nav>
   </header>
   <RouterView />
 </template>
+
+<style>
+  .shw-btn {
+      box-shadow: -3px -3px 10px 0 white , 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+  }
+</style>
