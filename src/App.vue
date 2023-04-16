@@ -2,15 +2,14 @@
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-// isSignedIn to make sure "LogIn" button goes away if currently logged in
+
 const router = useRouter()
 
 function googleSignin() {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
 signInWithPopup(auth, provider)
-  .then((result) => {
-    const credential = GoogleAuthProvider.credentialFromResult(result);
+  .then(async (_) => {
     router.push({ path: '/info' })
   }).catch((_) => {});
 }
