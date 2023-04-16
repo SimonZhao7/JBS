@@ -31,8 +31,6 @@ const o = onMounted( async()=> {
 <template>
   <main>
     <div v-if="!loading">
-      <h1>JBS Rideshare<sup>©</sup></h1>
-
       <h2>Available Trips</h2>
       <div class="horizontalLine"></div>
 
@@ -42,11 +40,11 @@ const o = onMounted( async()=> {
             <div class="tripTitle">
               {{trip.title}}
             </div>
-            <br><br>
-            <p>Spaces left: {{trip.capacity}}</p>
+            <br>
+            <p>Spaces left: {{trip.capacity}} seats</p>
             <p>Departure Time: {{ new Date(trip.leaveDate.seconds * 1000).toDateString() }}  
-              {{ new Date(trip.leaveDate.seconds * 1000).toLocaleTimeString() }}</p>
-            <p>Cost: {{trip.price}}</p>
+              ({{ new Date(trip.leaveDate.seconds * 1000).toLocaleTimeString() }})</p>
+            <p>Cost: ${{trip.price}}</p>
           </div>
         </div>
       </div>

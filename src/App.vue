@@ -61,6 +61,9 @@ function redirectAddTrips() {
             <RouterLink to="/"> Home </RouterLink>
           </div>
             <div @click="googleSignin" class="hover:text-gray-500 cursor-pointer">Login</div>
+            <div class="specialText">
+              <h1>JBS Rideshare<sup>©</sup></h1>
+            </div>
         </div>
         <button class="shw-btn border-0 rounded-full w-12 h-12 bg-white text-3xl flex items-center justify-center hover:scale-110 transition-all duration-150 text-gray-600" @click="redirectAddTrips" >+</button>
       </div>

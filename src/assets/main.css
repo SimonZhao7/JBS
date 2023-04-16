@@ -11,14 +11,13 @@
 
 body {
     background-image: url("../../img/IMG_8862.JPG");
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
-h1 {
-    font-size: 60px;
-    position: fixed;
-    text-align: center;
-    width: 100%;
+.specialText {
+    font-size: 35px;
+    width: 80%;
     font-weight:bold;
     background: -webkit-linear-gradient(right, #1c064e,#262897, #48bda6, #cfdbee);
     background-clip:border-box;
@@ -28,7 +27,6 @@ h1 {
 
 sup {
     font-size: 20px;
-    top: -30px;
     font-weight:lighter;
     background: -webkit-linear-gradient(left, #422781,#6366f1, #3b82f6, #c1d4f3);
     -webkit-background-clip: text;
@@ -36,14 +34,14 @@ sup {
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 45px;
     text-align: center;
     margin: auto;
     padding-top: 100px;
     width:90%;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
-    color: #000000;
+    color: #022143;
     -webkit-text-stroke-color: azure;
 }
 
@@ -51,13 +49,13 @@ h2 {
     border-bottom: 1px solid rgb(0, 0, 0);
     margin: auto;
     text-align: center;
-    width: 15%;
+    width: 20%;
 }
 
 .trips { 
     height: 210px;
     width: 50%;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     font-size: 18px;
     padding: 10px;
     border: solid 2px rgb(0, 0, 0);
@@ -66,10 +64,11 @@ h2 {
 }
 
 .tripTitle {
-    font-size: 30px;
+    font-size: 45px;
+    text-align: center;
     font-weight: bolder;
 }
 
 .loopItems {
-    margin-top: 50px;
+    margin-top: 20px;
 }
