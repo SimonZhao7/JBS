@@ -7,7 +7,12 @@ const router = useRouter()
 
 function googleSignin() {
   const auth = getAuth();
-  const provider = new GoogleAuthProvider();
+  const provider = new GoogleAuthProvider()
+  if (docCurr.exists()) {
+    router.push({ path: '/' })
+  } else {
+    router.push({ path: '/info' })
+  }
 signInWithPopup(auth, provider)
   .then(async (_) => {
     router.push({ path: '/info' })
@@ -28,7 +33,6 @@ signInWithPopup(auth, provider)
             Login
           </div>
         </div>
-        
         <button class="shw-btn border-0 rounded-full w-12 h-12 bg-white text-3xl flex items-center justify-center hover:scale-110 transition-all duration-150 text-gray-600">+</button>
       </div>
     </nav>
