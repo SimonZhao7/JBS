@@ -2,19 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-main {
-  background-image: url('../img/IMG_8862.JPG');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-size: 100% 100%;
-  background-size: cover;
-=======
 @layer base {
     html, body, #app {
         height: 100%;
         width: 100%;
-        
     }
->>>>>>> acb9086fd7df822fe359ce504b7e9fe687152b0e
+}
+
+body {
+    background-image: url("../../img/IMG_8862.JPG");
+    background-size: cover;
+}
+
+.TopGreeting {
+    padding-top: 10;
+    padding-bottom: 10;
+    width: 100%;
+    height: 13%;
+    background: #000719;
+    position: relative;
+    top: 10;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 60px;
+    text-align:center;
+    -webkit-text-fill-color: rgb(166, 149, 226);
+    font-weight:bold;
+    font-stretch: semi-condensed;
+}
+
+h1 sup {
+    font-size: 20px;
+    position: relative;
+    top: -30px;
+    font-weight:lighter;
+}
+
+main h2 {
+    font-size: 30px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align:justify;
+    position: relative;
+    top: 37px;
+    color: #000000;
+    -webkit-text-stroke-color: azure;
+    text-align: center;
+}
+
+main .horizontalLine {
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin-top: 5px;
+    width: 18%;
+    position: relative;
+    margin: auto;
+    top: 30px;
+}
+
+.trips { 
+    height: 270px;
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    -webkit-text-fill-color: black;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+    border: solid 2px rgb(0, 0, 0);
+    position: relative;
+    align-self: center;
+    top: 50px;
+    margin: auto;
+}
+
+.trips .tripTitle {
+    font-size: 30px;
+    font-weight: bolder;
 }
