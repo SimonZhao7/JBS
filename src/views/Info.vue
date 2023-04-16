@@ -1,7 +1,7 @@
 <template>
     <div class="flex min-height-full items-center justify-center flex-col h-full bg-gradient-to-r from-indigo-500 to-blue-500 space-y-4">
         <div class=" flex bg-white shadow-2xl p-16 rounded-[20px] overflow-none items-center justify-center">
-            <img src="../assets/sign-in.png" alt="CarImage" class="hidden sm:block">
+            <img src="../assets/drivingcar.gif" alt="CarImage" class="hidden sm:block rounded-xl pr-14">
             <div class = "space-y-4 items-center justify-center max-w-2xl">
                 <h1 class="font-bold text-5xl text-indigo-500"> Create Account </h1>
                 <input class = "w-full h-16 border-indigo-200 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-200 focus:border-indigo-500 text-lg font-medium" type = "text" placeholder="First Name" v-model="firstname"/>
