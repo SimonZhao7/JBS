@@ -80,6 +80,9 @@ function InboxMessageBox() {
             <RouterLink to="/"> Home </RouterLink>
           </div>
             <div @click="googleSignin" class="hover:text-gray-500 cursor-pointer">Login</div>
+            <div class="specialText">
+              <h1>JBS Rideshare<sup>©</sup></h1>
+            </div>
         </div>
         <div class = "flex space-x-6">
             <button class="shw-btn border-0 rounded-full w-24 h-12 bg-white text-xl flex items-center justify-center hover:scale-110 transition-all duration-150 text-gray-600" @click="InboxMessageBox" >Inbox</button>

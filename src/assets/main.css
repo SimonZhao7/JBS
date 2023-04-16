@@ -6,10 +6,72 @@
     html, body, #app {
         height: 100%;
         width: 100%;
-        font-family: 'nunito';
     }
 }
 
+body {
+    background-image: url("../../img/IMG_8862.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.specialText {
+    font-size: 35px;
+    width: 80%;
+    font-weight:bold;
+    background: -webkit-linear-gradient(right, #1c064e,#262897, #48bda6, #cfdbee);
+    background-clip:border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+sup {
+    font-size: 20px;
+    font-weight:lighter;
+    background: -webkit-linear-gradient(left, #422781,#6366f1, #3b82f6, #c1d4f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+h2 {
+    font-size: 45px;
+    text-align: center;
+    margin: auto;
+    padding-top: 100px;
+    width:90%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: #022143;
+    -webkit-text-stroke-color: azure;
+}
+
+.horizontalLine {
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin: auto;
+    text-align: center;
+    width: 20%;
+}
+
+.trips { 
+    height: 210px;
+    width: 50%;
+    background-color: #ffffff;
+    font-size: 18px;
+    padding: 10px;
+    border: solid 2px rgb(0, 0, 0);
+    border-radius: 25px;
+    margin: 20px auto;
+}
+
+.tripTitle {
+    font-size: 45px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.loopItems {
+    margin-top: 20px;
+    
 @layer components {
     .gra-btn {
         @apply border-4 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white ;
