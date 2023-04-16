@@ -1,5 +1,4 @@
 <script setup>
-<<<<<<< HEAD
 //import TheWelcome from '../components/TheWelcome.vue'
 import { async } from '@firebase/util';
 import {db, auth} from '../../firebase'
@@ -18,13 +17,10 @@ const o = onMounted(async()=>{
 }
 loading.value = false;
 });
-=======
->>>>>>> 45a525a914cf5ecc218fd9ea53afc54ef8f489a8
 </script>
 
 <template>
   <main>
-<<<<<<< HEAD
     <div v-if="!loading" class="TopGreeting">
       <h1>JBS Rideshare<sup>©</sup></h1>
     </div>
@@ -38,8 +34,6 @@ loading.value = false;
       <p>Spaces left: {{r.capacity}}</p>
       <!-- <p>Departure Time: {{new Date(r.leaveDate.seconds).toLocaleString()}}</p> -->
     </div>
-=======
->>>>>>> 45a525a914cf5ecc218fd9ea53afc54ef8f489a8
   </main>
   <!-- <TheWelcome /> -->
 </template>
