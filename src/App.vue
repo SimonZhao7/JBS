@@ -73,7 +73,7 @@ function InboxMessageBox() {
 
 <template>
   <header>
-    <nav class="shadow-md h-20 w-full py-3 text-md bg-white rounded-b-[20px] fixed md:px-10 sm: px-10">
+    <nav class="shadow-md h-20 w-full py-3 text-md bg-white rounded-b-[20px] fixed md:px-10 sm: px-10 z-50">
       <div class="flex items-center justify-between max-w-7xl mx-auto w-full h-full text-lg space-x-8">
         <div class="flex space-x-8">
           <div class="hover:text-gray-500 cursor-pointer ">

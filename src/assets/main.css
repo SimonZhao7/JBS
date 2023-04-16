@@ -6,6 +6,7 @@
     html, body, #app {
         height: 100%;
         width: 100%;
+        font-family: 'nunito';
     }
 }
 
@@ -39,7 +40,6 @@ h2 {
     margin: auto;
     padding-top: 100px;
     width:90%;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     color: #022143;
     -webkit-text-stroke-color: azure;
@@ -71,6 +71,7 @@ h2 {
 
 .loopItems {
     margin-top: 20px;
+}
     
 @layer components {
     .gra-btn {

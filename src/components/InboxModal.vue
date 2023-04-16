@@ -30,7 +30,7 @@
 </script>
 
 <template>
-    <div class = "shadow-md h-2/3 w-2/3 py-3 text-md bg-white rounded-[40px] fixed md:px-10 sm: px-10">
+    <div class = "shadow-md h-2/3 w-2/3 py-3 text-md bg-white rounded-[40px] fixed md:px-10 sm: px-10 z-50">
       <button @click="() => emit('close')">Close</button>
     </div>
 </template>

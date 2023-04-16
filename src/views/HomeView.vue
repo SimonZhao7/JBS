@@ -3,10 +3,12 @@
 import { async } from '@firebase/util';
 import {db, auth} from '../../firebase';
 import {ref, onMounted} from 'vue';
+import { useRouter } from 'vue-router'
 import {collection, query, where, getDocs, orderBy, onSnapshot, QuerySnapshot} from 'firebase/firestore';
 
 const r = ref([]);
 const loading = ref(true);
+const router = useRouter()
 
 const o = onMounted( async()=> {
   const q = query(collection(db, "trips"), where("leaveDate", ">", new Date()));
@@ -19,7 +21,12 @@ const o = onMounted( async()=> {
   
   else {
     onSnapshot(q, (querySnapshot)=>{
-      r.value = querySnapshot.docs.map((doc) => doc.data())
+      r.value = querySnapshot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data()
+        }
+      })
       console.log(r.value)
       loading.value = false;
     })
@@ -36,7 +43,7 @@ const o = onMounted( async()=> {
 
       <div class="loopItems">
         <div v-for="trip in r">
-          <div class="trips" onclick="location.href='./TripDetails.vue';" style="cursor: pointer;"> 
+          <div class="trips" @click="() => router.push(`/trips/${trip.id}`)" style="cursor: pointer;"> 
             <div class="tripTitle">
               {{trip.title}}
             </div>
