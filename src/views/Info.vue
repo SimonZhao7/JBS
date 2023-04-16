@@ -1,12 +1,15 @@
 <template>
-    <div class="flex items-center justify-center flex-col h-full bg-gradient-to-r from-indigo-500 to-blue-500 space-y-4">
-        <h1 class="p-5 font-bold text-5xl text-white hover: text-blue"> Create an Account </h1>
-        <div class = "space-y-4 max-w-2xl">
-            <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-medium" type = "text" placeholder="First Name" v-model="firstname"/>
-            <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-medium" type = "text" placeholder="Last Name" v-model="lastname"/>
-            <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-medium" type = "text" placeholder="Username" v-model="username"/>
-            <input class = "w-full h-10 border-gray-300 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-100 focus:border-gray-600 font-medium" type = "text" placeholder="Contact" v-model="contact"/>
-            <button class = "text-2xl w-full h-10 font-medium text-white border-white-300 border-2 rounded-md transition-all duration-250 outline-none px-4 hover:border-yellow-200 focus:border-white-300" @click="addUserInfo"> Submit </button>
+    <div class="flex min-height-full items-center justify-center flex-col h-full bg-gradient-to-r from-indigo-500 to-blue-500 space-y-4">
+        <div class=" flex bg-white shadow-2xl p-16 rounded-[20px] overflow-none items-center justify-center">
+            <img src="../assets/sign-in.png" alt="CarImage" class="hidden sm:block">
+            <div class = "space-y-4 items-center justify-center max-w-2xl">
+                <h1 class="font-bold text-5xl text-indigo-500"> Create Account </h1>
+                <input class = "w-full h-16 border-indigo-200 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-200 focus:border-indigo-500 text-lg font-medium" type = "text" placeholder="First Name" v-model="firstname"/>
+                <input class = "w-full h-16 border-indigo-200 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-200 focus:border-indigo-500 text-lg font-medium" type = "text" placeholder="Last Name" v-model="lastname"/>
+                <input class = "w-full h-16 border-indigo-200 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-200 focus:border-indigo-500 text-lg font-medium" type = "text" placeholder="Username" v-model="username"/>
+                <input class = "w-full h-16 border-indigo-200 border-2 rounded-md transition-all duration-150 outline-none px-4 hover:border-yellow-200 focus:border-indigo-500 text-lg font-medium" type = "text" placeholder="(123)-456-7890" v-model="contact"/>
+                <button class = "text-2xl w-full h-10 font-medium text-indigo-500 border-indigo-300 border-2 rounded-md transition-all duration-250 outline-none px-4 hover:bg-gradient-to-r from-indigo-500 to-blue-500 hover:text-white" @click="addUserInfo"> Submit </button>
+            </div>
         </div>
     </div>
 </template>
