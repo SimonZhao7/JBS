@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Userinfo from '../views/Info.vue'
 import AddTrip from '../views/AddTrip.vue'
 import TripDetails from '../views/TripDetails.vue'
+import ConfirmDetails from '../views/ConfirmDetails.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/trips/:id',
       name: 'viewTrip',
       component: TripDetails,
+    },
+    {
+      path: '/routes/confirm/:id',
+      name: 'confirmRoute',
+      component: ConfirmDetails,
     }
   ]
 })

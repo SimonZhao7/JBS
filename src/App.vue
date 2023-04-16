@@ -5,7 +5,6 @@ import { doc, setDoc, getDoc, getFirestore } from "firebase/firestore";
 import InboxModal from './components/InboxModal.vue'
 import { db } from '../firebase'
 import { ref } from 'vue'
-import { async } from '@firebase/util';
 
 
 // isSignedIn to make sure "LogIn" button goes away if currently logged in
@@ -29,13 +28,11 @@ signInWithPopup(auth, provider)
       router.push({ path: '/info' })
     }
   }).catch((error) => {
-    console.log(error)
     const errorCode = error.code;
     const errorMessage = error.message;
     const email = error.customData.email;
   });
 }
-
 function redirectAddTrips() {
   onAuthStateChanged(auth, async (user) => {
         if (user) {
@@ -53,7 +50,6 @@ function redirectAddTrips() {
         }
     });
 }
-
 
 function InboxMessageBox() {
   onAuthStateChanged(auth, async (user) => {
